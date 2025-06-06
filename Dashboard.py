@@ -39,9 +39,9 @@ opciones_hist = st.multiselect("Selecciona variables para ver histogramas:",
 colores = {"serum_creatinine": "#2e7d32", "ejection_fraction": "#0288d1", "serum_sodium": "#00796b"}
 
 for var in opciones_hist:
-    fig, ax = plt.subplots(figsize=(3, 1))
+    fig, ax = plt.subplots(figsize=(3, 0.8))
     sns.histplot(df[var], bins=30, kde=True, color=colores.get(var, "gray"), ax=ax)
-    ax.set_title(f"{var.replace('_', ' ').title()}", fontsize=9)
+    ax.set_title(f"{var.replace('_', ' ').title()}", fontsize=7)
     st.pyplot(fig)
 
 # 2. Outliers en variables clínicas
