@@ -42,7 +42,8 @@ for var in opciones_hist:
     fig, ax = plt.subplots(figsize=(3, 0.5))
     sns.histplot(df[var], bins=30, kde=True, color=colores.get(var, "gray"), ax=ax)
     ax.set_title(f"{var.replace('_', ' ').title()}", fontsize=7)
-    plt.tight_layout()
+    ax.tick_params(labelsize=6)  # Reduce el tamaño de etiquetas
+    plt.tight_layout()           # Acomoda todo
     st.pyplot(fig)
 
 # 2. Outliers en variables clínicas
