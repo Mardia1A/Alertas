@@ -41,7 +41,7 @@ colores = {"serum_creatinine": "#2e7d32", "ejection_fraction": "#0288d1", "serum
 for var in opciones_hist:
     fig, ax = plt.subplots(figsize=(3, 0.5))
     sns.histplot(df[var], bins=30, kde=True, color=colores.get(var, "gray"), ax=ax)
-    ax.set_title(f"{var.replace('_', ' ').title()}", fontsize=7)
+    ax.set_title(f"{var.replace('_', ' ').title()}", fontsize=4)
     ax.tick_params(labelsize=4)  # Reduce el tamaño de etiquetas
     plt.tight_layout()           # Acomoda todo
     st.pyplot(fig)
